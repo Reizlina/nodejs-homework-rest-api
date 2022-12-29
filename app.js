@@ -2,7 +2,35 @@ const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
 
+// const nodemailer = require("nodemailer");
+
 require("dotenv").config();
+
+// const { META_PASSWORD } = process.env;
+
+// const nodemailerConfig = {
+//   host: "smtp.meta.ua",
+//   port: 465,
+//   secure: true,
+//   auth: {
+//     user: "reizlina@meta.ua",
+//     pass: META_PASSWORD,
+//   },
+// };
+
+// const transport = nodemailer.createTransport(nodemailerConfig);
+
+// const email = {
+//   to: "kepip71165@letpays.com",
+//   from: "reizlina@meta.ua",
+//   subject: "Verify email",
+//   html: "<p>Verify your email</p>",
+// };
+
+// transport
+//   .sendMail(email)
+//   .then(() => console.log("Email send succsess"))
+//   .catch((error) => console.log(error.message));
 
 const authRouter = require("./routes/api/auth");
 
