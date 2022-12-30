@@ -31,6 +31,13 @@ const userSchema = new Schema(
       type: String,
       default: "",
     },
+    veryfy: {
+      type: Boolean,
+      default: false,
+    },
+    veryficationCode: {
+      type: String,
+    },
   },
   {
     versionKey: false,
@@ -51,9 +58,14 @@ const loginSchema = Joi.object({
   password: Joi.string().required(),
 });
 
+const emailSchema = Joi.object({
+  email: Joi.string().pattern(emailRegexp),
+});
+
 const schemas = {
   registerSchema,
   loginSchema,
+  emailSchema,
 };
 
 const User = model("user", userSchema);
